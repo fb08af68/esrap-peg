@@ -1,0 +1,14 @@
+# The entire test will be in one string
+text <- (phrase eol)*
+eol <- '\r\n' / '\n' / '\r' / eof
+eof <- !.
+phrase <- trySlash / tryAnd / tryQuestion / tryPlus / tryPrimary / oneLiteral
+
+# All the possibilities of literal strings and classes
+tryPrimary <- 'primary' ": " '"\"\'' "'\'\"" ["] ['-'] [\[] [[] [\]] "]" "[]" [-] [0-2] "\t" "\u0031" "\U00000031" "\061" "\611"
+trySlash <- "trySlash: " (('a'? 'a' (& (! 'a')) ((! eol) .)*) / ('a'* ((! eol) .)*))
+tryAnd <- "tryAnd: " ('a' &'b') ((! eol) .)*
+# Also testing star
+tryQuestion <- "tryQuestion: " 'a' 'b'? ((!';') .)* ';' 'a' 'b'? ((!';') .)* ';' 'a' 'b'? ((!';') .)* ';'
+tryPlus <- 'tryPlus: ' ((('a'+) 'b') / 'b') 'a'+ 'b' 'a'+ 'b'
+oneLiteral <- 'oneLiteral'

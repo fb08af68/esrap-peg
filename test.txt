@@ -1,0 +1,6 @@
+primary: ""'''""'[[]][]-1	11111
+trySlash: aabbbbb
+tryAnd: abccccc
+tryQuestion: ab;acc;acccc;
+tryPlus: babaab
+oneLiteral

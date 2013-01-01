@@ -1,0 +1,32 @@
+(TEXT
+ (((PHRASE
+    (TRYPRIMARY
+     ("primary" ": " "\"\"'" "''\"" "\"" "'" "[" "[" "]" "]" "[]" "-" "1" "	"
+      "1" "1" "1" "11")))
+   (EOL "
+"))
+  ((PHRASE
+    (TRYSLASH
+     ("trySlash: "
+      ("a" "a" NIL ((NIL "b") (NIL "b") (NIL "b") (NIL "b") (NIL "b"))))))
+   (EOL "
+"))
+  ((PHRASE
+    (TRYAND
+     ("tryAnd: " ("a" "b")
+      ((NIL "b") (NIL "c") (NIL "c") (NIL "c") (NIL "c") (NIL "c")))))
+   (EOL "
+"))
+  ((PHRASE
+    (TRYQUESTION
+     ("tryQuestion: " "a" "b" NIL ";" "a" NIL ((NIL "c") (NIL "c")) ";" "a" NIL
+      ((NIL "c") (NIL "c") (NIL "c") (NIL "c")) ";")))
+   (EOL "
+"))
+  ((PHRASE (TRYPLUS ("tryPlus: " "b" ("a") "b" ("a" "a") "b")))
+   (EOL "
+"))
+  ((PHRASE (ONELITERAL "oneLiteral"))
+   (EOL "
+"))))
+

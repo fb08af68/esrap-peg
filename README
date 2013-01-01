@@ -1,0 +1,38 @@
+Esrap-PEG is a thin wrapper on top of Esrap that uses Esrap to 
+parse PEG grammars and can use the resulting AST to define rules
+for an Esrap parser that parses the PEG grammar in question.
+
+See http://pdos.csail.mit.edu/~baford/packrat/popl04/peg-popl04.pdf
+and http://pdos.csail.mit.edu/~baford/packrat/ for more information.
+
+I use the canonical PEG definition with two exceptions. First,
+I allow octal escape \377 (original article says [0-2] for the
+first digit for some reason). Second, I allow \u followed by
+4 hexadecimal digits for full Unicode escape.
+
+The library provides means to parse PEG syntax, to define rules
+in run-time without compiling any closures and to generate code
+that implements the rules in compiled module.
+
+It does a walk around the tree to define rules or to return code
+defining the rules.
+
+This parser uses the same permissive license as Esrap.
+
+Licence:
+
+ Permission is hereby granted, free of charge, to any person
+ obtaining a copy of this software and associated documentation files
+ (the "Software"), to deal in the Software without restriction,
+ including without limitation the rights to use, copy, modify, merge,
+ publish, distribute, sublicense, and/or sell copies of the Software,
+ and to permit persons to whom the Software is furnished to do so,
+ subject to the following conditions:
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+ CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+ TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
