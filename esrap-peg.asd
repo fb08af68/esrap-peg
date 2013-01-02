@@ -1,5 +1,8 @@
 (asdf:defsystem :esrap-peg
   :name "esrap-peg"
+  :description "A wrapper around Esrap to allow generating Esrap grammars from PEG definitions"
+  :license "MIT"
+  :author "Michael Raskin"
   :depends-on (
 	       :esrap 
 	       :iterate 

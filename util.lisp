@@ -1,3 +1,8 @@
+; This file is part of Esrap-PEG
+; Esrap-PEG generates Esrap rules from PEG definitions
+; Esrap-PEG is written by Michael Raskin
+; Esrap-PEG is provided by the same license as Esrap, namely, MIT license
+;
 (in-package :esrap-peg)
 
 (defun stream-contents (f)

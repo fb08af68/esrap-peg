@@ -1,3 +1,8 @@
+; This file is part of Esrap-PEG
+; Esrap-PEG generates Esrap rules from PEG definitions
+; Esrap-PEG is written by Michael Raskin
+; Esrap-PEG is provided by the same license as Esrap, namely, MIT license
+;
 (in-package :esrap-peg)
 
 (eval-when (:compile-toplevel :load-toplevel :execute)
@@ -23,7 +28,6 @@
 	  (gethash sem-symbol *range-list*))
 	(code
 	  `(progn
-	     (format t "~s~%" :defining-sem-check)
 	     ,@(unless
 		 already-defined-semsymbol
 		 `(
@@ -51,7 +55,6 @@
 			   (when (eq c t) (collect t))
 			   )
 		       ))))
-	     (format t "~s~%" :adding-rule)
 	     (add-rule 
 	       ',rule-symbol 
 	       (make-instance 
@@ -61,7 +64,6 @@
 		 :condition t
 		 :guard-expression t
 		 ))
-	     (format t "~s~%" :done)
 	     )
 	  )
 	)
