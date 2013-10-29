@@ -174,7 +174,7 @@
 (def-ast-rule dot (and "." spacing))
 
 (def-ast-rule spacing (* (or space comment)))
-(def-ast-rule comment (and "#" (* (and (! endofline) character)) endofline))
+(def-ast-rule comment (and "#" (* (and (! endofline) character)) (or endofline endoffile)))
 (def-ast-rule space (or #\Space #\Tab endofline))
 (def-ast-rule endofline (or #.(format nil "~a~a" #\Return #\NewLine ) #\Newline #\Return))
 (def-ast-rule endoffile (! character))

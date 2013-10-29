@@ -38,7 +38,7 @@ CLOSE       <- ')' Spacing
 DOT         <- '.' Spacing
 
 Spacing     <- (Space / Comment)*
-Comment     <- '#' (!EndOfLine .)* EndOfLine
+Comment     <- '#' (!EndOfLine .)* (EndOfLine/EndOfFile)
 Space       <- ' ' / '\t' / EndOfLine
 EndOfLine   <- '\r\n' / '\n' / '\r'
 EndOfFile   <- !.
