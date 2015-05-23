@@ -16,5 +16,8 @@
     :def-peg-fun
     :def-peg-matchers
     :*esrap-peg-pattern-package*
+    :add-peg-order-rule
+    :delete-peg-order-rule
+    :*esrap-peg-matcher-default-abbreviations*
     )
   )
