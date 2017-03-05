@@ -179,7 +179,7 @@
     (funcall character-range-definer sem-symbol ranges)
     (funcall rule-creator rule-symbol 
 	     (list sem-symbol 'character)
-	     '#'esrap::text/bounds
+             '#'to-text
 	     )
     rule-symbol
     ))

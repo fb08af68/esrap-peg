@@ -9,6 +9,8 @@
   (defvar *character-class-storage* nil)
   (defvar *range-list* (make-hash-table))
 
+  (defun to-text (str start end) (declare (ignorable start end)) (string str))
+
   (defmacro character-class-rule (&rest clauses)
     `(let*
        (
@@ -60,7 +62,7 @@
 	       (make-instance 
 		 'rule
 		 :expression '(,sem-symbol character)
-		 :transform #'esrap::text/bounds
+		 :transform #'to-text
 		 :condition t
 		 :guard-expression t
 		 ))
@@ -78,7 +80,7 @@
   (make-instance
     'rule
     :expression 'character
-    :transform #'esrap::text/bounds
+    :transform #'to-text
     :condition t
     :guard-expression t
     )
