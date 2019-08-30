@@ -51,6 +51,9 @@
 	    )
 	  :condition t
 	  :guard-expression t
+          :properties (esrap::make-rule-properties
+                        :uses-cache t
+                        :uses-cache-unless-trivial t)
 	  ))
       )))
 

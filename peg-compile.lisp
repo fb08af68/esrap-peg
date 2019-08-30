@@ -40,19 +40,22 @@
 	 (push `(add-rule 
 		  ',sym
 		  (make-instance 
-		    'rule
-		    :expression ',expression
-		    :transform 
-		    ,(cond
-		       ((eq transform :list) 
-			`(lambda (l &rest pos) (declare (ignorable pos)) (list ',sym l)))
-		       ((symbolp transform) `'(symbol-function ,transform))
-		       ((functionp (eval transform)) transform)
-		       (t nil)
-		       )
-		    :condition t
-		    :guard-expression t
-		    ))
+                    'rule
+                    :expression ',expression
+                    :transform 
+                    ,(cond
+                       ((eq transform :list) 
+                        `(lambda (l &rest pos) (declare (ignorable pos)) (list ',sym l)))
+                       ((symbolp transform) `'(symbol-function ,transform))
+                       ((functionp (eval transform)) transform)
+                       (t nil)
+                       )
+                    :condition t
+                    :guard-expression t
+                    :properties (esrap::make-rule-properties
+                                  :uses-cache t
+                                  :uses-cache-unless-trivial t)
+                    ))
 	       code-storage
 	       )))
      )
